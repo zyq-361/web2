@@ -1,0 +1,21 @@
+
+		#clac #spec input{
+			width: 140px;
+			height: 36px;
+			font-size: 24px;
+			padding-right: 10px;
+			text-align: right;
+		}
+		#clac td input{
+			width: 40px;
+			height: 40px;
+			margin:5px 5px;
+		}
+		#clac td input:active{
+			background-color:#47DDF8;
+			/*background-color: #045DFA;*/
+			opacity: 0.5;
+		}
+		#right input{
+			float: right;
+		}

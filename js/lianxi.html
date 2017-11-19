@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		table{
+			width: 800px;
+			height: 300px;
+			border: 1px solid #069;
+		}
+		table td{
+			border: 1px solid #069;
+		}
+		body{
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		document.write("<table>");
+		var i,j;
+		for(i=1;i<=9;i++)
+		{
+			document.write("<tr>");
+			for(j=1;j<=i;j++)
+			{
+				document.write("<td>"+j+"*"+i+"="+i*j+"</td>");	
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	</script>
+</head>
+<body>
+
+</body>
+</html>

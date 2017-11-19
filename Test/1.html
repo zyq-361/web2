@@ -1,0 +1,225 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<!-- <script type="text/javascript">
+		///1-6
+		function alertDialog()
+		{
+			alert('你确定要关闭此窗口吗？');
+		}
+		function confirmDialog()
+		{
+			var bConfirm=window.confirm("Are you sure to colse this window?");
+			if(bConfirm){
+				console.log(true);
+			}else{
+				console.log(false);
+			}
+		}
+		function promptDialog()
+		{
+			var sPrompt=window.prompt('请输入你的评价，1（满意）2（一般）3（不满意）', "鼓励一下我吧");
+			console.log(sPrompt);
+		}
+	</script> -->
+<!-- 	<script type="text/javascript">
+		///
+		function alertmes()
+		{
+			var msg=setTimeout("console.log('延迟执行2秒')",2000);
+			clearTimeout(msg);
+		}
+
+		function alertmes2()
+		{
+			var timeoutId=setTimeout(function(){
+				alert('延迟执行3秒钟');3000
+			});
+			clearTimeout(timeoutId);
+		}
+	</script> -->
+<!-- </head>
+<body>
+	<input type="button" name="button" value="alert" onclick="alertDialog();"><br>
+	<input type="button" value="confirm" onclick="confirmDialog();" name=""><br>
+	<input type="button" value="prompt" name="" onclick="promptDialog();"><br>
+	<input type="button" onClick="alertmes2()" value="延迟执行" />
+</body>
+</html> --> 
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>dom</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		window.onload=function(){
+
+		}
+
+	</script>
+	<style type="text/css">
+		#d{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			color: #fff;
+			font-size: 30px;
+			text-align: center;
+			line-height: 100px;
+
+		}
+		.c{
+			width: 200px;
+			height: 100px;
+			background-color: blue;
+			color: #fff;
+			font-size: 30px;
+			text-align: center;
+			line-height: 100px;
+
+		}
+		.clearfix:after{
+			clear: both;
+			content: "sdfsdf";
+		}
+	</style>
+</head>
+<body>
+	<div id="d">
+		id
+	</div>
+	<div class="c">
+		hello,js_dom;
+	</div>
+	<div class="c">
+		<ul class="clearfix">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<p>
+		hello,js_dom;
+	</p>
+	<input type="button" name="button" value="b" id="b">
+</body>
+<script type="text/javascript">
+	// var id=document.getElementById("d");
+	// var c=document.getElementsByClassName("c");
+	// var tag=document.getElementsByTagName("p");
+	// var box=document.getElementsByTagName("div");
+	// box[1].onmouseover=function()
+	// {
+	// 	console.log("over div[1]");
+	// }
+	// console.log(c,id,tag);
+	// c.onmouseover=function(){
+	// 	console.log("over");
+	// }
+	// document.getElementById("b").onclick=function(){
+	// 	console.log("you click a button");
+	// }
+	// d.onclick=function(){
+	// 	console.log("you click a div");
+	// }
+	// document.getElementById("d").onmouseover=function(){
+	// 	console.log("you over a div");
+	// }
+	var cs=document.getElementsByClassName('c');
+	cs[0].onClick=function(){
+		console.log('hesc');
+	}
+</script>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+			#clac #spec p{
+			width: 140px;
+			height: 10px;
+			font-size: 20px;
+			line-height: 10px;
+			text-align: right;
+		}
+		#clac td input{
+			width: 40px;
+			height: 40px;
+			margin:5px 5px;
+		}
+		#clac td input:active{
+			background-color:#47DDF8;
+			/*background-color: #045DFA;*/
+			opacity: 0.5;
+		}
+		#right input{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<table id="clac" cellpadding="2px" border="1px"> 
+		<tr>
+			<td id="spec" colspan="3">
+				<p id="result"></p>
+			</td id="right">
+			<td><input type="button" name="" value="c" class="op" onclick="clearData()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="" value="1" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="2" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="3" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="+" class="op" onclick="showData(value)"></td>
+		</tr> 
+		<tr>
+			<td><input type="button" name="" value="4" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="5" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="6" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="-" class="op" onclick="showData(value)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="" value="7" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="8" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="9" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="*" class="op" onclick="showData(value)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" name="" value="0" class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="." class="op" onclick="showData(value)"></td>
+			<td><input type="button" name="" value="=" class="op" onclick="calculate()"></td>
+			<td><input type="button" name="" value="/" class="op" onclick="showData(value)"></td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+	var str='';
+	function showData(op){
+		str+=op;
+		document.getElementById("result").innerHTML=str;	
+	}
+	function clearData(){
+		str='';
+		document.getElementById("result").innerHTML=0;
+	}
+	function calculate(){
+		document.getElementById("result").innerHTML="";
+		var result=eval(str);
+		document.getElementById("result").innerHTML=result;
+		str=String(result);
+	}
+	var arr = document.getElementsByClassName("op");
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bom</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<input type="button" name="sort" value="排序" onclick="tank()">
+</body>
+	<script type="text/javascript">
+		
+		function tank(){
+		var str=prompt("请输入以逗号分隔的一串数字(注意是英文的逗号)");
+			//console.log(str);
+			//console.log(typeof str);
+			var arr=new Array;
+			//console.log(str.split(','));
+			arr=str.split(',');
+			for(var i=0;i<arr.length;i++)
+			{
+				arr[i]=parseInt(arr[i]);
+				console.log(arr[i]);
+			}
+			for(var i=0;i<arr.length;i++)
+			{
+				for(var j=0;j<arr.length-i;j++)
+				{
+					var temp;
+					if(arr[j]>arr[j+1])
+					{
+						temp=arr[j];
+						arr[j]=arr[j+1];
+						arr[j+1]=temp;
+					}
+
+				}
+			}
+			console.log(arr);		
+		};
+		
+	</script>
+</html>
