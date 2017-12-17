@@ -1,0 +1,18 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+#picScroll{
+	margin:0 auto;
+	height:300px;
+	width:600px;
+	white-space: nowrap;
+	overflow:hidden;
+}
+span{
+	   width: 600px;
+} 
+img{
+        width:300px;
+    	height: 300px;
+}

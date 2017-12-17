@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>comment</title>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+		}
+		li{
+			list-style-type: none;
+		}
+		a{
+			text-decoration: none;
+		}
+		.wrapper{
+			margin:0 auto;
+			width: 480px;
+			height: 1000px;
+		}
+		.head{
+			width: 480px;
+		}
+		.head span{
+			margin-top: 30px;
+			display: block;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;
+			background-image: url(images/bg.jpg);
+		}
+		ul{
+			margin: 20px 0px;
+		}
+		ul li{
+			float: left;
+		}
+		.content{
+			margin-top: 20px;
+			font-size: 22px;
+		}
+		#cmt{
+
+			float: right;
+		}
+		textarea{
+			width: 440px;
+			height: 300px;
+
+			text-align:left;
+			font-size: 24px;
+			padding: 20px 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var stars=document.getElementsByClassName('star');
+			var arr=["物流公司的态度比较差,建议换一家!不过掌柜人还不错! 很好的卖家，谢谢喽。我的同事们都很喜欢呢。下次再来哦 !",
+				"老板性格好，宝贝也好，戴上去也很舒服，超赞. 还不错.质量挺好的.速度也快",
+				"老熟客了,东西还是一如既往的好,货真价实的日货尾单,性价比突出",
+				"店主服务很好，宝贝也很便宜！以后一定常来！",
+				"一个字,好!货晚了两天收到，不过东西真的很好，老板人也好。运输的速度应该是邮局的问题吧。"];
+			var comment=document.getElementById('comment');
+			var con=false;	
+			function starPic(i){
+					// console.log(this);
+					for(var j=0;j<=i;j++){
+						console.log(i);
+						if(i<2)
+							stars[j].src="images/star1.png";
+						else
+							stars[j].src="images/star2.png";
+					}
+			}
+			
+			function hide(){
+				if(con==true)
+					return;
+				else{
+					for(var i=0;i<stars.length;i++){
+						stars[i].src="images/star0.png";
+					}
+					comment.value="";
+				}
+			}
+			function qd(i){
+				con=true;
+				starPic(i);
+				comment.value=arr[count];
+			}
+			var  count;
+			for(var i=0;i<stars.length;i++){
+				stars[i].onmouseover=function(){
+					count=parseInt(this.name);
+					if(con==false)
+						starPic(count);
+				}
+				stars[i].onclick=function(){
+						for(var j=0;j<stars.length;j++)
+							stars[j].src="images/star0.png";
+						qd(count);
+				}
+
+				stars[i].onmouseout=function(){
+					 hide();
+				}
+			}
+
+
+
+
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="head">
+		<span>宝贝与描述相符（打分匿名）</span>
+		</div>
+		<div class="list">
+			<ul>
+				<li><img class="star" src="images/star0.png" alt="star" name="0"></li>
+				<li><img class="star" src="images/star0.png" alt="star" name="1"></li>
+				<li><img class="star" src="images/star0.png" alt="star" name="2"></li>
+				<li><img class="star" src="images/star0.png" alt="star" name="3"></li>
+				<li><img class="star" src="images/star0.png" alt="star" name="4"></li>
+			</ul>
+		</div>
+		<div class="content">
+			<form action="">
+				<textarea cols="66" rows="20" id="comment">
+					
+				</textarea>
+				<select name="" id="cmt">
+				<option value="0">公开评论</option>
+				<option value="1">匿名评论</option>
+				</select>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
